@@ -1,18 +1,18 @@
 
 
 // Chiedere all'utente quanti km deve percorrere
-var km = prompt('Inserisci i km che desideri percorrere')
-console.log(km);
+var km = parseInt(prompt('Inserisci i km che desideri percorrere' , 100));
+
+document.getElementById('km').innerHTML = km;
+
 // Chiedre all'utente quanti anni ha
-var age = parseInt(prompt('Inserisci la tua età'));
-console.log(age);
-// costo biglietto al km
-// var prezzo = 0.21;
-// console.log(prezzo);
+var age = parseInt(prompt('Inserisci la tua età' , 22));
+
+document.getElementById('anni').innerHTML = age;
+
 
 
 var totale = 0.21 * km;
-console.log(totale);
 
 
 var sconto20 = (1 - 0.2) * totale;
@@ -20,20 +20,11 @@ var sconto20 = (1 - 0.2) * totale;
 
 var sconto40 = (1 - 0.4) * totale;
 
-// if (age < 18 ) {
-//   console.log(sconto20);
-// } else if ( age > 65) {
-//   console.log(sconto40);
-// } else {
-//   console.log(totale);
-// }
+
 if (age < 18 ) {
-  document.getElementById('acquisto').innerHTML = 'Sei minorenne e quindi hai acquistato il biglietto con uno sconto del 20%' + ' ' + sconto20 + '€';
+  document.getElementById('acquisto').innerHTML = sconto20 + '.' + ' ' + ' <br> Essendo un bimbetto hai diritto ad uno sconto del 20%';
 } else if ( age > 65) {
-  document.getElementById('acquisto').innerHTML = 'Sei minorenne e quindi hai acquistato il biglietto con uno sconto del 40%' + ' ' + sconto40 + '€';
+  document.getElementById('acquisto').innerHTML = sconto40 + '.' + ' ' + ' <br> Essendo vecchio hai diritto ad uno sconto del 40%';
 } else {
-  document.getElementById('acquisto').innerHTML = 'Attaccati al cazzo' + ' ' + totale + '€';
+  document.getElementById('acquisto').innerHTML = totale;
 }
-
-
-// document.getElementById('acquisto').innerHTML = 'Sei minorenne e quindi hai acquistato il biglietto con uno sconto del 20';
